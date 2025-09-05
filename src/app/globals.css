@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    scroll-padding-top: 6rem;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 155 65% 41%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 210 20% 96.1%;
+    --secondary-foreground: 224 71.4% 4.1%;
+    --muted: 210 20% 92.1%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 158 72% 23%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 210 20% 89.8%;
+    --input: 210 20% 89.8%;
+    --ring: 155 65% 41%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 210 20% 98%;
+    --card: 0 0% 5.9%;
+    --card-foreground: 210 20% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 155 65% 41%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 10% 15%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 220 10% 15%;
+    --muted-foreground: 220 9.8% 63.9%;
+    --accent: 158 72% 23%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 210 20% 19.8%;
+    --input: 210 20% 19.8%;
+    --ring: 155 65% 41%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+    background-color: hsl(0 0% 100%);
+    background-image: radial-gradient(at 80% 0%, hsl(210 20% 85%) 0px, transparent 50%),
+                      radial-gradient(at 0% 100%, hsl(210 20% 90%) 0px, transparent 50%);
+  }
+  .dark body {
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(43, 41, 41));
+  }
+  section {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-800 { animation-delay: 800ms; }
+  .animation-delay-900 { animation-delay: 900ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
+
+  .nav-link-hover {
+    @apply relative overflow-hidden;
+  }
+
+  .nav-link-hover::before {
+    @apply content-[''] absolute inset-0 bg-muted -z-10 transition-transform duration-300 ease-in-out;
+    transform: translateX(-100%);
+  }
+
+  .nav-link-hover:hover::before,
+  .nav-link-hover.active::before {
+    transform: translateX(0);
+  }
+
+  .animated-gradient {
+    background-size: 300% 300%;
+    animation: gradient-animation 3s ease-in-out infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .funky-animation {
+    animation: funky-glow 2.5s ease-in-out infinite;
+  }
+
+  .funky-animation:hover {
+    animation-duration: 1s;
+  }
+
+  @keyframes funky-glow {
+    0%, 100% {
+      transform: scale(1);
+      text-shadow: 0 0 5px hsl(var(--primary) / 0.5), 0 0 10px hsl(var(--accent) / 0.5);
+    }
+    50% {
+      transform: scale(1.05);
+      text-shadow: 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--accent) / 0.8);
+    }
+  }
+
+  .animate-float {
+    animation: float 2.8s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .animate-continuous-glow {
+    animation: continuous-glow 4s ease-in-out infinite;
+  }
+
+  @keyframes continuous-glow {
+    0%, 100% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.9;
+    }
+  }
+}
