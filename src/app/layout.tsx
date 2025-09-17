@@ -9,8 +9,8 @@ import { SocialIcons } from '@/components/SocialIcons';
 import { EmailIcon } from '@/components/EmailIcon';
 
 export const metadata: Metadata = {
-  title: 'A.A. Portfolio | Abdullah Al Faisal',
-  description: 'The portfolio of Abdullah Al Faisal, a Full Stack Developer.',
+  title: 'Abdullah Al Faisal',
+  description: 'The portfolio of Abdullah Al Faisal, a SQA Engineer.',
 };
 
 export default function RootLayout({
