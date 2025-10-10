@@ -174,7 +174,7 @@ export const educationData: Education[] = [
   {
     institution: 'American International University-Bangladesh (AIUB)',
     degree: 'Bachelor of Science in Computer Science & Engineering',
-    date: '2019 - 2023',
+    date: '2021 - 2025',
   },
 ];
 
