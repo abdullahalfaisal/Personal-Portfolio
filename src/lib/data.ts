@@ -185,6 +185,26 @@ export const certificationsData: Certification[] = [
     date: '2025',
   },
   {
+    issuer: 'Brain Station-23',
+    name: 'Cybersecurity and Physical Protection',
+    date: '2025',
+  },
+  {
+    issuer: 'Brain Station-23',
+    name: 'Digital Assets Security and Privacy',
+    date: '2025',
+  },
+  {
+    issuer: 'Brain Station-23',
+    name: 'Prompt Engineering Foundations: Start Talking to Ai Efficiently',
+    date: '2025',
+  },
+  {
+    issuer: 'Brain Station-23',
+    name: 'QMS: FIxed Price Project',
+    date: '2025',
+  },
+  {
     issuer: 'Institute of Electrical and Electronics Engineers',
     name: 'IEEE Student Member',
     date: '2023',
