@@ -3,8 +3,8 @@ import type { Project, Skill, Experience, Education, Certification, SkillsByCate
 
 export const personalData = {
   name: 'Abdullah Al Faisal',
-  title: 'SQA Engineer',
-  bio: `I am a CSE graduate from American International University-Bangladesh (AIUB), currently focused on learning and building my career in Software Quality Assurance (SQA). I have a strong passion for ensuring software reliability through testing, analysis, and continuous improvement. I'm committed to developing my skills in manual and automated testing, and I aim to become a top-performing SQA Engineer known for precision and quality. Let's do something amazing together!`,
+  title: 'Software QA Engineer',
+  bio: `I am a CSE graduate from American International University-Bangladesh (AIUB), currently focused on learning and building my career in Software Quality Assurance (SQA). I have a strong passion for ensuring software reliability through testing, analysis and continuous improvement. I'm committed to developing my skills in manual and automated testing and I aim to become a top-performing SQA Engineer known for precision and quality. Let's do something amazing together!`,
   avatar: '/avatar.png',
   email: 'abdullahalfaisal992@gmail.com',
   socials: {
@@ -147,15 +147,29 @@ export const skillsData: SkillsByCategory = {
 };
 
 export const experienceData: Experience[] = [
+{
+    company: 'Brain Station 23',
+    title: 'Associate SQA Engineer',
+    date: 'Dec 2025 - Present',
+    description: [
+      'Performing automated testing to ensure software quality and reliability.',
+      'Understand business logic and requirements to ensure the software behaves exactly according to defined business workflows.',
+      'Create UAT documentation, including writing detailed test scenarios based on business rules.',
+      'Follow the software development methodology (Agile/Scrum/Kanban) and collaborate closely with developers, product owners, and stakeholders.',
+      'Provide support for emergency issues, ensuring timely response and resolution.',
+      'Collaborating with development teams to improve software quality and user experience.',
+      'Propose solutions or improvements to enhance system performance, usability, and stability.',
+    ],
+  },
+  
   {
     company: 'Brain Station 23',
     title: 'SQA Engineer Trainee',
-    date: 'Aug 2025 - Present',
+    date: 'Aug 2025 - Nov 2025',
     description: [
-      'Performing manual and automated testing to ensure software quality and reliability.',
-      'Developing and executing test plans, test cases, and test scripts.',
+      'Performing manual testing to ensure software quality and reliability.',
+      'Developing and executing test cases',
       'Identifying, documenting, and tracking bugs and issues to resolution.',
-      'Collaborating with development teams to improve software quality and user experience.',
     ],
   },
   {
