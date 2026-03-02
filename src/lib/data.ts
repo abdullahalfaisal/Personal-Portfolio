@@ -105,6 +105,7 @@ export const skillsData: SkillsByCategory = {
     { name: 'HTML', iconPath: '/icons/html-1.svg' },
     { name: 'CSS', iconPath: '/icons/css-3.svg' },
     { name: 'JavaScript', iconPath: '/icons/javascript-1.svg' },
+    { name: 'TypeScript', iconPath: '/icons/typescript.svg' },
   ],
   "Methodologies & Concepts": [
     { name: 'Manual Testing' },
@@ -121,13 +122,14 @@ export const skillsData: SkillsByCategory = {
   ],
   "Testing": [
     { name: 'Selenium WebDriver', iconPath: '/icons/selenium-svgrepo-com.svg' },
+    { name: 'Playwright', iconPath: '/icons/playwright.svg' },
     { name: 'TestNG', iconPath: '/icons/testng.png' },
     { name: 'Jira', iconPath: '/icons/jira-1.svg' },
     { name: 'Postman', iconPath: '/icons/postman-icon-svgrepo-com.svg' },
     { name: 'Git/GitHub', iconPath: '/icons/github-sign.png' },
-    { name: 'Figma', iconPath: '/icons/figma-icon.svg' },
   ],
   "Tools": [
+    { name: 'Figma', iconPath: '/icons/figma-icon.svg' },
     { name: 'Adobe Premiere Pro', iconPath: '/icons/adobe-premiere-svgrepo-com.svg' },
     { name: 'Adobe After Effects', iconPath: '/icons/adobe-after-effects-svgrepo-com.svg' },
     { name: 'Adobe Illustrator', iconPath: '/icons/adobe-illustrator-svgrepo-com.svg' },
