@@ -7,6 +7,7 @@ import { VolunteerSection } from "@/components/volunteer-section";
 import { EducationSection } from "@/components/EducationSection";
 import { CertificationsSection } from "@/components/CertificationsSection";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
       <AnimatedSection>
         <GetInTouchSection />
       </AnimatedSection>
+       <ScrollToTop />
     </div>
   );
 }
