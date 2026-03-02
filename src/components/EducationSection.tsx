@@ -9,7 +9,7 @@ export function EducationSection() {
         <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Education</h2>
         <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">My academic background.</p>
       </div>
-      <div className="flex justify-center max-w-2xl mx-auto">
+      <div className="flex flex-col justify-center max-w-2xl mx-auto gap-4">
         {educationData.map((edu, index) => (
           <div key={index} className="w-full animate-in fade-in slide-in-from-bottom-12 duration-1000" style={{ animationDelay: `${index * 150}ms` }}>
             <Card className="bg-card/50 backdrop-blur-sm flex items-start p-6 transition-all duration-300 hover:shadow-xl hover:border-primary/50 hover:-translate-y-1">
