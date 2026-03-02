@@ -3,6 +3,7 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { GetInTouchSection } from "@/components/GetInTouchSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
+import { VolunteerSection } from "@/components/volunteer-section";
 import { EducationSection } from "@/components/EducationSection";
 import { CertificationsSection } from "@/components/CertificationsSection";
 import { AnimatedSection } from "@/components/AnimatedSection";
@@ -18,6 +19,9 @@ export default function Home() {
       </AnimatedSection>
       <AnimatedSection>
         <ExperienceSection />
+      </AnimatedSection>
+       <AnimatedSection>
+        <VolunteerSection />
       </AnimatedSection>
       <AnimatedSection>
         <EducationSection />
