@@ -130,6 +130,7 @@ export const skillsData: SkillsByCategory = {
   ],
   "Tools": [
     { name: 'Figma', iconPath: '/icons/figma-icon.svg' },
+    { name: 'Canva', iconPath: '/icons/canva.svg' },
     { name: 'Adobe Premiere Pro', iconPath: '/icons/adobe-premiere-svgrepo-com.svg' },
     { name: 'Adobe After Effects', iconPath: '/icons/adobe-after-effects-svgrepo-com.svg' },
     { name: 'Adobe Illustrator', iconPath: '/icons/adobe-illustrator-svgrepo-com.svg' },
