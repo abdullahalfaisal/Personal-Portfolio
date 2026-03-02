@@ -1,5 +1,5 @@
 
-import type { Project, Skill, Experience, Education, Certification, SkillsByCategory } from './types';
+import type { Project, Skill, Experience, Volunteer, Education, Certification, SkillsByCategory } from './types';
 
 export const personalData = {
   name: 'Abdullah Al Faisal',
@@ -183,6 +183,48 @@ export const experienceData: Experience[] = [
       'Gained hands-on experience with machine learning algorithms and data processing.',
       'Assisted in developing and testing machine learning models.',
       'Collaborated with the team on data analysis and visualization tasks.',
+    ],
+  },
+];
+export const volunteerData: Volunteer[] = [
+  {
+    organization: 'IEEE AIUB Student Branch',
+    role: 'Creative Team Lead',
+    date: '2024 - 2025',
+    description: [
+      'Led the creative team responsible for designing and producing visual content for IEEE AIUB Student Branch events and campaigns.',
+      'Coordinated with team members to maintain consistent branding and creative direction across all branch activities.',
+      'Managed deadlines and deliverables for multiple concurrent projects and events.',
+    ],
+  },
+   {
+    organization: 'IEEE Microwave Theory and Techniques Society — AIUB SB Chapter',
+    role: 'Chapter Chairperson',
+    date: '2024 - 2025',
+    description: [
+      'Led the IEEE MTT-S AIUB Student Branch Chapter as Chairperson.',
+      'Organized technical events, seminars, and workshops focused on microwave and RF engineering.',
+      'Represented the chapter in inter-branch and national IEEE activities.',
+      'Managed a team of executive members to achieve chapter goals and IEEE standards.',
+    ],
+  },
+    {
+    organization: 'IEEE Industry Applications Society — AIUB SB Chapter',
+    role: 'Chapter Secretary',
+    date: '2023 - 2024',
+    description: [
+      'Managed official chapter communications, documentation, and meeting records.',
+      'Assisted in planning and organizing chapter events, workshops, and seminars.',
+      'Coordinated between chapter members and IEEE branch leadership to ensure smooth operations.',
+    ],
+  },
+  {
+    organization: 'IEEE AIUB Student Branch',
+    role: 'Volunteer — Video Editor',
+    date: '2023 - 2024',
+    description: [
+      'Produced and edited promotional and recap videos for IEEE AIUB Student Branch events.',
+      'Collaborated with the creative team to deliver high-quality video content within deadlines.',
     ],
   },
 ];
