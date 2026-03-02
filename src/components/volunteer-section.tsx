@@ -7,7 +7,7 @@ export function VolunteerSection() {
     <section id="volunteer" className="py-16 animate-in fade-in slide-in-from-bottom-12 duration-1000">
       <div className="text-center mb-12 animate-in fade-in duration-1000">
         <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Volunteer Experience</h2>
-        <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">Giving back to the community.</p>
+        <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">A Journey of Learning and Growth</p>
       </div>
       <div className="relative max-w-3xl mx-auto">
         <div className="absolute left-4 md:left-9 top-0 h-full w-0.5 bg-border -translate-x-1/2 animate-in fade-in duration-1000 delay-500"></div>
