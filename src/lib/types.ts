@@ -29,6 +29,13 @@ export type Experience = {
   description: string[];
 };
 
+export interface Volunteer {
+  organization: string;
+  role: string;
+  date: string;
+  description: string[];
+}
+
 export type Education = {
   institution: string;
   degree: string;
