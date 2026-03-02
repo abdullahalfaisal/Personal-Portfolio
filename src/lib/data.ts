@@ -193,6 +193,16 @@ export const educationData: Education[] = [
     degree: 'Bachelor of Science in Computer Science & Engineering',
     date: '2021 - 2025',
   },
+  {
+    institution: 'Shaheed Police Smrity College',
+    degree: 'Higher Secondary Certificate',
+    date: '2020',
+  },
+   {
+    institution: 'Shaheed Police Smrity College',
+    degree: 'Secondary School Certificate',
+    date: '2018',
+  },
 ];
 
 export const certificationsData: Certification[] = [
