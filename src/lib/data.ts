@@ -5,7 +5,7 @@ export const personalData = {
   name: 'Abdullah Al Faisal',
   title: 'Software QA Engineer',
   bio: `I am a CSE graduate from American International University-Bangladesh (AIUB), currently focused on learning and building my career in Software Quality Assurance (SQA). I have a strong passion for ensuring software reliability through testing, analysis and continuous improvement. I'm committed to developing my skills in manual and automated testing and I aim to become a top-performing SQA Engineer known for precision and quality. Let's do something amazing together!`,
-  avatar: '/avatar.png',
+  avatar: '/avatar.jpg',
   email: 'abdullahalfaisal992@gmail.com',
   socials: {
     github: 'https://github.com/abdullahalfaisal',
