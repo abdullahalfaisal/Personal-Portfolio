@@ -18,12 +18,12 @@ export function HeroSection() {
             {personalData.bio}
           </p>
           <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4 animate-in fade-in duration-1000 delay-500">
-             <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground transition-transform hover:scale-105">
+             <Button asChild size="lg">
               <Link href="#contact">
                 Get in Touch
               </Link>
             </Button>
-             <Button asChild variant="outline" size="lg" className="transition-transform hover:scale-105">
+             <Button asChild variant="outline" size="lg">
               <a href="/resume.pdf" download>
                 Download CV <Download className="ml-2 h-4 w-4" />
               </a>
@@ -32,7 +32,6 @@ export function HeroSection() {
         </div>
         <div className="order-1 flex justify-center md:order-2 animate-in fade-in zoom-in-50 duration-1000">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent blur-3xl animate-continuous-glow"></div>
             <div className="relative w-full h-full">
                 <ProfilePicture src={personalData.avatar} alt={personalData.name} />
             </div>

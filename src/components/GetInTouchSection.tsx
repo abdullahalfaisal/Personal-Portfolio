@@ -30,8 +30,7 @@ export function GetInTouchSection() {
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
           <div className="group relative flex-shrink-0 md:mr-2">
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary to-accent blur-md animate-continuous-glow"></div>
-            <div className="relative h-80 w-56 md:h-96 md:w-64 overflow-hidden rounded-2xl bg-background">
+            <div className="relative h-80 w-56 md:h-96 md:w-64 overflow-hidden rounded-2xl bg-background shadow-2xl">
               <Image
                 src="/portrait.jpg"
                 alt="Get in touch"
@@ -50,7 +49,7 @@ export function GetInTouchSection() {
             </div>
             <div className="flex flex-col items-center md:items-start gap-4 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
               {personalData.socials.linkedin && (
-                  <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground transition-transform hover:scale-105 w-full sm:w-auto">
+                  <Button asChild size="lg" className="w-full sm:w-auto">
                       <Link href={personalData.socials.linkedin} target="_blank" rel="noopener noreferrer">
                           Say Hello <Send className="ml-2 h-4 w-4" />
                       </Link>

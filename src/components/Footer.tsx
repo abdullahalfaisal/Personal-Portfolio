@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-background/50 backdrop-blur-sm">
       <div className="container mx-auto flex flex-col items-center justify-center gap-6 px-4 pt-8 pb-20 md:py-8">
-        <div className="hidden md:flex items-center gap-4">
+        <div className="flex flex-wrap justify-center items-center gap-4">
           {personalData.socials.github && (
             <Button asChild variant="ghost" size="icon" className="rounded-full transition-transform hover:scale-110">
               <Link href={personalData.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
