@@ -24,6 +24,7 @@ export type SkillsByCategory = {
 
 export type Experience = {
   company: string;
+  companyUrl?: string;
   title: string;
   date: string;
   description: string[];
@@ -31,6 +32,7 @@ export type Experience = {
 
 export interface Volunteer {
   organization: string;
+  organizationUrl?: string;
   role: string;
   date: string;
   description: string[];
@@ -38,6 +40,7 @@ export interface Volunteer {
 
 export type Education = {
   institution: string;
+  institutionUrl?: string;
   degree: string;
   date: string;
 };

@@ -11,32 +11,32 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 md:px-6 lg:px-8 space-y-12 sm:space-y-16">
+    <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <AnimatedSection>
         <HeroSection />
       </AnimatedSection>
       <AnimatedSection>
-        <ProjectsSection />
-      </AnimatedSection>
-      <AnimatedSection>
         <ExperienceSection />
-      </AnimatedSection>
-       <AnimatedSection>
-        <VolunteerSection />
       </AnimatedSection>
       <AnimatedSection>
         <EducationSection />
       </AnimatedSection>
       <AnimatedSection>
+        <SkillsSection />
+      </AnimatedSection>
+      <AnimatedSection>
+        <ProjectsSection />
+      </AnimatedSection>
+      <AnimatedSection>
         <CertificationsSection />
       </AnimatedSection>
       <AnimatedSection>
-        <SkillsSection />
+        <VolunteerSection />
       </AnimatedSection>
       <AnimatedSection>
         <GetInTouchSection />
       </AnimatedSection>
-       <ScrollToTop />
+
     </div>
   );
 }

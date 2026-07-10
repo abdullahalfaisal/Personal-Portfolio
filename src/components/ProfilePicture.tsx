@@ -22,8 +22,7 @@ export function ProfilePicture({ src, alt }: ProfilePictureProps) {
         alt={alt}
         fill
         priority
-        {/* className="rounded-full object-cover border-4 border-card shadow-lg transition-transform hover:scale-110 duration-300" */}
-        className="rounded-full object-cover object-top border-4 border-card shadow-lg transition-transform hover:scale-110 duration-300" 
+        className="rounded-full object-cover object-top shadow-xl transition-transform hover:scale-105 duration-300" 
        />
   );
 }

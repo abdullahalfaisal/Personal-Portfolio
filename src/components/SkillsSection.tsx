@@ -1,70 +1,72 @@
 import { skillsData } from '@/lib/data';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import Image from 'next/image';
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-16 animate-in fade-in slide-in-from-bottom-12 duration-1000">
-      <div className="text-center mb-12 animate-in fade-in duration-1000">
-        <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">My Skills</h2>
-        <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">The technologies and tools I use to build things.</p>
+    <section id="skills" className="py-20 animate-in fade-in slide-in-from-bottom-12 duration-500 overflow-hidden">
+      <div className="text-center mb-16 animate-in fade-in duration-500">
+        <h2 className="text-3xl font-bold tracking-tight md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">My Toolkit & Competencies</h2>
+        <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">The technologies I use and the core skills I bring to the table.</p>
       </div>
-      <div className="max-w-4xl mx-auto">
-        <Tabs defaultValue={Object.keys(skillsData)[0]} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 mb-8 h-auto flex-wrap">
-            {Object.keys(skillsData).map((category) => (
-              <TabsTrigger key={category} value={category} className="text-xs md:text-sm whitespace-normal h-auto py-2">{category}</TabsTrigger>
-            ))}
-          </TabsList>
-          {Object.entries(skillsData).map(([category, skills]) => (
-            <TabsContent key={category} value={category} className="animate-in fade-in duration-500">
-              <Card className="bg-card/50 backdrop-blur-sm border-0 shadow-none">
-                <CardContent className="p-6">
-                   <div className="flex flex-wrap justify-center gap-4">
-                      {skills.map((skill, index) => (
-                        <div 
-                          key={skill.name} 
-                          className="animate-in fade-in zoom-in-95 duration-500 animate-float hover:[animation-play-state:paused]" 
-                          style={{ animationDelay: `${index * 150}ms` }}
-                        >
-                          {skill.iconPath ? (
-                            <TooltipProvider>
-                              <Tooltip>
-                                <TooltipTrigger asChild>
-                                  <div className="flex flex-col items-center gap-3 p-4 rounded-lg transition-all duration-300 hover:bg-muted/50 w-28 h-28 justify-center cursor-pointer">
-                                    <div className="h-16 w-16 flex items-center justify-center text-muted-foreground">
-                                       <Image
-                                          src={skill.iconPath}
-                                          alt={`${skill.name} icon`}
-                                          width={48}
-                                          height={48}
-                                          className="object-contain"
-                                        />
-                                    </div>
-                                    <span className="text-sm text-center font-medium">{skill.name}</span>
-                                  </div>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                  <p>{skill.name}</p>
-                                </TooltipContent>
-                              </Tooltip>
-                            </TooltipProvider>
-                          ) : (
-                             <Badge variant="secondary" className="text-base px-4 py-2 transition-transform hover:scale-110">
-                                {skill.name}
-                              </Badge>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          ))}
-        </Tabs>
+      
+      <div className="flex flex-col gap-12 max-w-full">
+        {Object.entries(skillsData).map(([category, skills], categoryIndex) => {
+          const hasIcons = skills.some(skill => skill.iconPath);
+          const marqueeSkills = Array(6).fill(skills).flat(); // Repeat enough times for seamless loop
+          const animationClass = categoryIndex % 2 === 1 ? 'animate-marquee-reverse' : 'animate-marquee';
+          
+          // Calculate uniform speed (roughly 60 pixels per second)
+          const estimatedItemWidth = hasIcons ? 168 : 144;
+          const totalWidth = skills.length * 6 * estimatedItemWidth;
+          const distanceToTravel = totalWidth / 2;
+          const duration = Math.max(distanceToTravel / 60, 10); // Minimum 10s duration
+
+          return (
+            <div key={category} className="space-y-4">
+              <h3 className="text-2xl font-semibold tracking-tight max-w-5xl mx-auto px-4 md:px-0 text-left">{category}</h3>
+              
+              <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <div 
+                  className={`${animationClass} flex gap-6 py-4 items-center min-w-max`}
+                  style={{ animationDuration: `${duration}s` }}
+                >
+                  {marqueeSkills.map((skill, index) => (
+                    hasIcons ? (
+                      <div 
+                        key={`${skill.name}-${index}`} 
+                        className="flex-shrink-0 flex flex-col items-center justify-center p-4 rounded-2xl bg-card/30 backdrop-blur-md border border-white/5 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-primary/20 group h-32 w-36"
+                      >
+                        {skill.iconPath ? (
+                          <div className="flex flex-col items-center gap-3">
+                            <div className="h-10 w-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+                              <Image
+                                src={skill.iconPath}
+                                alt={`${skill.name} icon`}
+                                width={40}
+                                height={40}
+                                className="object-contain"
+                              />
+                            </div>
+                            <span className="text-sm font-medium text-foreground/90 text-center leading-tight">{skill.name}</span>
+                          </div>
+                        ) : (
+                          <span className="text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors duration-300 text-center leading-tight">{skill.name}</span>
+                        )}
+                      </div>
+                    ) : (
+                      <div 
+                        key={`${skill.name}-${index}`}
+                        className="flex-shrink-0 px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default font-medium shadow-sm"
+                      >
+                        {skill.name}
+                      </div>
+                    )
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
