@@ -1,12 +1,27 @@
 import type { Metadata } from 'next';
+import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
+
 import { Toaster } from '@/components/ui/toaster';
 import { SocialIcons } from '@/components/SocialIcons';
 import { EmailIcon } from '@/components/EmailIcon';
+import { BackgroundBlobs } from '@/components/BackgroundBlobs';
+import { AIChatBot } from '@/components/AIChatBot';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Abdullah Al Faisal',
@@ -22,19 +37,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/portrait.jpg?v=1" type="image/jpeg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn('font-body antialiased')}>
+      <body className={cn(inter.variable, outfit.variable, 'font-sans antialiased')}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <BackgroundBlobs />
           <div className="relative flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">{children}</main>
-            <Footer />
+
             <SocialIcons />
             <EmailIcon />
             <Toaster />
+            <AIChatBot />
           </div>
         </ThemeProvider>
       </body>

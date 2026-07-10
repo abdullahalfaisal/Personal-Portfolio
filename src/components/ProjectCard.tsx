@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Github, Link as LinkIcon } from 'lucide-react';
@@ -11,6 +13,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from './ui/tooltip';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 type ProjectCardProps = {
   project: Project;
@@ -19,8 +22,44 @@ type ProjectCardProps = {
 export function ProjectCard({ project }: ProjectCardProps) {
   const { title, description, technologies, image, image_hint, links } = project;
 
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
   return (
-    <Card className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card/50 backdrop-blur-sm">
+    <motion.div
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="h-full w-full perspective-[1000px]"
+    >
+      <Card className="h-full group relative flex flex-col overflow-hidden hover:shadow-primary/20 shadow-xl transition-shadow duration-300">
       <div className="aspect-video relative overflow-hidden">
           <Image
             src={image}
@@ -43,7 +82,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {links.live && (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button asChild variant="outline" size="icon" className="bg-gradient-to-r from-primary to-accent text-primary-foreground transition-transform hover:scale-110">
+                  <Button asChild variant="outline" size="icon" className="bg-gradient-to-r from-primary to-accent text-primary-foreground border-0 transition-opacity hover:opacity-90 shadow-md shadow-primary/20">
                     <Link href={links.live} target="_blank" rel="noopener noreferrer">
                       <LinkIcon className="h-4 w-4" />
                       <span className="sr-only">Live Demo</span>
@@ -58,7 +97,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {links.client && (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button asChild variant="ghost" size="icon" className="transition-transform hover:scale-110">
+                  <Button asChild variant="ghost" size="icon" className="transition-colors hover:bg-white/10 hover:text-foreground">
                     <Link href={links.client} target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4" />
                       <span className="sr-only">Client Repo</span>
@@ -73,7 +112,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {links.server && (
                <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button asChild variant="ghost" size="icon" className="transition-transform hover:scale-110">
+                  <Button asChild variant="ghost" size="icon" className="transition-colors hover:bg-white/10 hover:text-foreground">
                     <Link href={links.server} target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4" />
                       <span className="sr-only">Server Repo</span>
@@ -89,5 +128,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </TooltipProvider>
       </CardFooter>
     </Card>
+    </motion.div>
   );
 }

@@ -3,8 +3,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, Code2 } from 'lucide-react';
+import { Menu, Code2, Terminal } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import { TerminalOverlay } from './TerminalOverlay';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { cn } from '@/lib/utils';
@@ -13,18 +14,19 @@ import { useActiveSection } from '@/hooks/useActiveSection';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
-  { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
-  { href: '#volunteer', label: 'Volunteering' },
   { href: '#education', label: 'Education' },
-  { href: '#certifications', label: 'Certifications' },
   { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#certifications', label: 'Certifications' },
+  { href: '#volunteer', label: 'Volunteering' },
   { href: '#contact', label: 'Contact' },
 ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const activeSection = useActiveSection(
     navLinks.map(link => link.href.substring(1))
   );
@@ -97,6 +99,10 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <Button variant="ghost" size="icon" onClick={() => setIsTerminalOpen(true)} className="hover:text-green-500 hover:bg-green-500/10 transition-colors">
+            <Terminal className="h-[1.2rem] w-[1.2rem]" />
+            <span className="sr-only">Open Terminal</span>
+          </Button>
           <ThemeToggle />
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -135,6 +141,7 @@ export function Header() {
           </div>
         </div>
       </div>
+      <TerminalOverlay isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
     </header>
   );
 }
