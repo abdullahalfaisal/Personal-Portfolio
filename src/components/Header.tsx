@@ -112,7 +112,7 @@ export function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
+              <SheetContent side="right" onCloseAutoFocus={(e) => e.preventDefault()}>
                 <div className="flex flex-col gap-6 p-6">
                   <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
                     <Code2 className="h-8 w-8 text-foreground font-bold" />

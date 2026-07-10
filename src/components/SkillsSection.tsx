@@ -34,11 +34,11 @@ export function SkillsSection() {
                     hasIcons ? (
                       <div 
                         key={`${skill.name}-${index}`} 
-                        className="flex-shrink-0 flex flex-col items-center justify-center p-4 rounded-2xl bg-card/30 backdrop-blur-md border border-white/5 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-primary/20 group h-32 w-36"
+                        className="flex-shrink-0 flex flex-col items-center justify-center p-3 md:p-4 rounded-2xl bg-card/30 backdrop-blur-md border border-white/5 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-primary/20 group h-24 w-28 md:h-32 md:w-36"
                       >
                         {skill.iconPath ? (
-                          <div className="flex flex-col items-center gap-3">
-                            <div className="h-10 w-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+                          <div className="flex flex-col items-center gap-2 md:gap-3">
+                            <div className="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
                               <Image
                                 src={skill.iconPath}
                                 alt={`${skill.name} icon`}
@@ -56,7 +56,7 @@ export function SkillsSection() {
                     ) : (
                       <div 
                         key={`${skill.name}-${index}`}
-                        className="flex-shrink-0 px-6 py-3 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default font-medium shadow-sm"
+                        className="flex-shrink-0 px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default font-medium shadow-sm"
                       >
                         {skill.name}
                       </div>
